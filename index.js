@@ -10,6 +10,10 @@ var url = 'http://api.playstoreapi.com/v1.1/apps/' + packageName + '?key=' + api
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
+app.get('/', function(request, response) {
+  response.send('Hello World!')
+})
+
 request({ url: url, json: true }, function (error, response, body) {
     if (!error && response.statusCode === 200) {
       console.log(body) // Print the json response

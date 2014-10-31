@@ -14,13 +14,13 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 app.use("/styles", express.static(__dirname + '/styles'));
 
-request({ url: url, json: true }, function (error, response, body) {
-    if (!error && response.statusCode === 200) {
-      	for (var i = 0; i < body["topselling_paid"].length; i++) {
-	  		console.log((body["topselling_paid"][i]).toString());
-	  	}
-    }
-});
+//request({ url: url, json: true }, function (error, response, body) {
+//    if (!error && response.statusCode === 200) {
+//      	for (var i = 0; i < body["topselling_paid"].length; i++) {
+//	  		console.log((body["topselling_paid"][i]).toString());
+//	  	}
+//    }
+//});
 
 app.get('/', function(req, res) {
   res.render('index.html')

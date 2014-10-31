@@ -16,14 +16,10 @@ app.get('/', function(request, response) {
 
 request({ url: url, json: true }, function (error, response, body) {
     if (!error && response.statusCode === 200) {
-//      JSON.parse(body.toString(), function(k, v) {
-//      	if (k == "topselling_paid") {
-//      		for (var i = 0; i < v.length; i++) {
-//      			response.send(v[i]);
-//      		}
-//      	}
-//      });
-		response.send(body.toString());
+      	//var parsedResponse = JSON.parse(body.toString());
+      	for (var i = 0; i < body["topselling_paid"].length; i++) {
+	  		console.log((body["topselling_paid"][i]).toString());
+	  	}
     }
 });
 

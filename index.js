@@ -14,9 +14,22 @@ app.get('/', function(request, response) {
   response.send('Hello World!')
 })
 
+var pg = require('pg');
+
+app.get('/db', function (request, response) {
+  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    client.query('SELECT * FROM test_table', function(err, result) {
+      done();
+      if (err)
+       { console.error(err); response.send("Error " + err); }
+      else
+       { response.send(result.rows); }
+    });
+  });
+})
+
 request({ url: url, json: true }, function (error, response, body) {
     if (!error && response.statusCode === 200) {
-      	//var parsedResponse = JSON.parse(body.toString());
       	for (var i = 0; i < body["topselling_paid"].length; i++) {
 	  		console.log((body["topselling_paid"][i]).toString());
 	  	}

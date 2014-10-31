@@ -11,8 +11,14 @@ h1 {
 	text-align: center;
 }
 
+h2 {
+	font-family: "Montserrat", sans-serif;
+	text-align: center;
+	font-size: 24px;
+}
+
 #about {
-	background-color: #333333;
+	background-color: rgb(51, 51, 51);
 	color: #EEE;
 	margin-top: -20px;
 }

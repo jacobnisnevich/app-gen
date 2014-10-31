@@ -9,7 +9,8 @@
   "dependencies": {
     "pg": "2.x",
     "express": "~4.9.x",
-    "request": "2.47.x"
+    "request": "2.47.x",
+    "hogan-express": "0.5.2"
   },
   "engines": {
     "node": "0.10.x"

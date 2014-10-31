@@ -1,0 +1,23 @@
+html {
+    height: 100%;
+}
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 14px;
+}
+
+h1 {
+	font-family: "Montserrat", sans-serif;
+	text-align: center;
+}
+
+#about {
+	background-color: #333333;
+	color: #EEE;
+	margin-top: -20px;
+}
+
+.home-tile {
+	height: 750px;
+	padding: 30px;
+}

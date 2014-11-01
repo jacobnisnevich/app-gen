@@ -7,6 +7,7 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "pg": "2.x",
     "express": "~4.9.x",
     "request": "2.47.x",
     "hogan-express": "0.5.x",

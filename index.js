@@ -15,24 +15,26 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 app.use("/styles", express.static(__dirname + '/styles'));
 
-var initPayload = {
-	"query": {
-		"name": "Most Popular Apps",
-		"platform": "android",
-		"query_params": {
-			"sort": "number_ratings",
-			"from": 0,
-			"num": 100,
-			"sort_order": "desc",
-			"content_rating": [],
-			"cat_int": [],
-			"downloads_lte": "",
-			"downloads_gte": ""
+for (var i = 0; i < 100; i++) {
+	var payload = {
+		"query": {
+			"name": "Most Popular Apps",
+			"platform": "android",
+			"query_params": {
+				"sort": "number_ratings",
+				"from": i * 100,
+				"num": 100,
+				"sort_order": "desc",
+				"content_rating": [],
+				"cat_int": [],
+				"downloads_lte": "",
+				"downloads_gte": ""
+			}
 		}
 	}
-}
 
-// database.populateDB(initPayload);
+	database.populateDB(payload);
+}
 
 app.get('/', function(req, res) {
   res.render('index.html')

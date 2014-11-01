@@ -15,7 +15,8 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 app.use("/styles", express.static(__dirname + '/styles'));
 
-for (var i = 0; i < 100; i++) {
+for (var i = 0; i < 10; i++) {
+	console.log(i.toString());
 	var payload = {
 		"query": {
 			"name": "Most Popular Apps",
@@ -31,7 +32,7 @@ for (var i = 0; i < 100; i++) {
 				"downloads_gte": ""
 			}
 		}
-	}
+	};
 
 	database.populateDB(payload);
 }

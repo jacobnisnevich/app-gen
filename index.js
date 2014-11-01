@@ -34,7 +34,7 @@ for (var i = 0; i < 10; i++) {
 		}
 	};
 
-	database.populateDB(payload);
+	setInterval(database.populateDB(payload), 1000);
 }
 
 app.get('/', function(req, res) {

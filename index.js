@@ -36,7 +36,7 @@ function populateWithNthPage(i, limit) {
 	};	
 
 	if (i < limit) {
-		populateWithNthPage(i + 1);
+		populateWithNthPage(i + 1, limit);
 	}
 
 	database.populateDB(payload);

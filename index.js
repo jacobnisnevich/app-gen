@@ -15,8 +15,6 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 app.use("/styles", express.static(__dirname + '/styles'));
 
-var i = 0;
-
 function populateWithNthPage(i, limit) {
 	var payload = {
 		"query": {
@@ -35,16 +33,16 @@ function populateWithNthPage(i, limit) {
 		}
 	};	
 
-	if (i < limit) {
-		populateWithNthPage(i + 1, limit);
-	}
-
 	database.populateDB(payload);
+
+	if (i < limit) {
+		setTimeout(function() {
+			populateWithNthPage(i + 1, limit);
+		}, 1000);
+	}
 }
 
-setTimeout(function() {
-	populateWithNthPage(i, 10);
-}, 1000);
+// populateWithNthPage(0, 200);
 
 app.get('/', function(req, res) {
   res.render('index.html')

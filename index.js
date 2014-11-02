@@ -35,11 +35,11 @@ function populateWithNthPage(i, limit) {
 		}
 	};	
 
-	database.populateDB(payload);
-
 	if (i < limit) {
 		populateWithNthPage(i + 1);
 	}
+
+	database.populateDB(payload);
 }
 
 setTimeout(function() {

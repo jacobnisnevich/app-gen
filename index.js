@@ -15,8 +15,9 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 app.use("/styles", express.static(__dirname + '/styles'));
 
-for (var i = 0; i < 10; i++) {
-	console.log(i.toString());
+var i = 0;
+
+function populateWithNthPage(i, limit) {
 	var payload = {
 		"query": {
 			"name": "Most Popular Apps",
@@ -32,10 +33,18 @@ for (var i = 0; i < 10; i++) {
 				"downloads_gte": ""
 			}
 		}
-	};
+	};	
 
-	setInterval(database.populateDB(payload), 1000);
+	database.populateDB(payload);
+
+	if (i < limit) {
+		populateWithNthPage(i + 1);
+	}
 }
+
+setTimeout(function() {
+	populateWithNthPage(i, 10);
+}, 1000);
 
 app.get('/', function(req, res) {
   res.render('index.html')

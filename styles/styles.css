@@ -17,16 +17,36 @@ h2 {
 	font-size: 24px;
 }
 
+section{
+    position:relative;
+    height:100%;
+    width:100%;
+}
+
 #main {
 	background-color: rgb(51, 51, 51);
 	color: #EEE;
-	margin-top: 50px;
-	padding-top: 150px;
+	padding-top: 200px;
+}
+
+#generator {
+	background-color: #F6F6F6;
+	color: #333;
+}
+
+#data {
+	background-color: rgb(51, 51, 51);
+	color: #EEE;
+}
+
+#statistics {
+	background-color: #F6F6F6;
+	color: #333;
 }
 
 #about {
-	background-color: #F6F6F6;
-	color: #333;
+	background-color: rgb(51, 51, 51);
+	color: #EEE;
 }
 
 #about ul {
@@ -35,7 +55,6 @@ h2 {
 }
 
 .home-tile {
-	height: 910px;
 	padding: 30px;
 	padding-top: 75px;
 }

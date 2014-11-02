@@ -14,6 +14,7 @@ var url = 'http://api.playstoreapi.com/v1.1/top/apps/' + category + '?key=' + ap
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 app.use("/styles", express.static(__dirname + '/styles'));
+app.use("/js", express.static(__dirname + '/js'));
 
 function populateWithNthPage(i, limit) {
 	var payload = {

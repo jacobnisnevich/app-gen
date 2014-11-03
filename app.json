@@ -1,7 +1,6 @@
 {
-  "name": "Node.js Getting Started",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "name": "AppGen",
+  "description": "An App that statistically analyzes Google Play Store app data and generates optimal app ideas",
+  "repository": "https://github.com/jacobnisnevich/app-gen",
   "keywords": ["node", "express", "static"]
 }

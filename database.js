@@ -12,16 +12,20 @@ var connection = mysql.createConnection({
 	insecureAuth: true
 });
 
-connection.connect(function(err) {
-	if (err) {
-		console.error('Error connecting to MYSQL Server: ' + err.stack);
-		return;
-	}
-	console.log('Connected to MYSQL Server');
-});
+function connectToDB() {
+	connection.connect(function(err) {
+		if (err) {
+			console.error('Error connecting to MYSQL Server: ' + err.stack);
+			return;
+		}
+		console.log('Connected to MYSQL Server');
+	});
+}
 
 module.exports = {
 	populateDB: function (payload) {
+		connectToDB();
+
 		request({
 			json: true,
 			method: 'POST',

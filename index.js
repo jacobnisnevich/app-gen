@@ -3,6 +3,8 @@ var express = require('express');
 var database = require('./database');
 var app = express();
 
+var constant = 1;
+
 app.set('view engine', 'html');
 app.enable('view cache');
 app.engine('html', require('hogan-express'));

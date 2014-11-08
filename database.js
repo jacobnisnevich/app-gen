@@ -14,7 +14,7 @@ var db = new sequelize('alex', mysql_user, mysql_pwd, {
 });
 
 db.query("SELECT * FROM app_applist").success(function(myTableRows) {
-	console.log(myTableRows);
+	// console.log(myTableRows);
 })
 
 var connection = mysql.createConnection({

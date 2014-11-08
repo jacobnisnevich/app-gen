@@ -1,8 +1,21 @@
 var mysql = require('mysql');
 var request = require('request');
+var sequelize = require('sequelize');
 
 var mysql_user = process.env.MYSQL_USERNAME.toString();
 var mysql_pwd = process.env.MYSQL_PASSWORD.toString();
+
+var db = new sequelize('alex', mysql_user, mysql_pwd, {
+	dialect: 'mysql',
+	host: 'MySQLC6.webcontrolcenter.com',
+	dialectOptions: {
+		insecureAuth: true
+	}
+});
+
+db.query("SELECT * FROM app_applist").success(function(myTableRows) {
+	console.log(myTableRows);
+})
 
 var connection = mysql.createConnection({
 	host: 'MySQLC6.webcontrolcenter.com',

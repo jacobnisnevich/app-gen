@@ -14,7 +14,11 @@ var db = new sequelize('alex', mysql_user, mysql_pwd, {
 });
 
 db.query("SELECT * FROM app_applist").success(function(myTableRows) {
-	// 	console.log(myTableRows);
+	myTableRows.forEach( function(row) {
+		if (isForeignString(row.description)) {
+			console.log(row.name);
+		}
+	})
 })
 
 var connection = mysql.createConnection({
@@ -33,6 +37,22 @@ function connectToDB() {
 		}
 		console.log('Connected to MYSQL Server');
 	});
+}
+
+function isForeignString(string) {
+	var qCounter = 0;
+
+	for (var i = 0; i < string.length; i++) {
+		if (string[i] == '?') {
+			qCounter++;
+		}
+
+		if (qCounter / string.length > 0.33) {
+			return true;
+		}
+	}
+
+	return false;
 }
 
 module.exports = {

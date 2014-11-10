@@ -13,13 +13,18 @@ var db = new sequelize('alex', mysql_user, mysql_pwd, {
 	}
 });
 
+var counter = 0;
+
 db.query("SELECT * FROM app_applist").success(function(myTableRows) {
 	myTableRows.forEach( function(row) {
-		if (isForeignString(row.description)) {
-			console.log(row.name);
+		if (isForeignString(row.description, 0.10)) {
+			// console.log(row.name);
+			counter++;
 		}
 	})
-})
+
+	console.log(counter);
+});
 
 var connection = mysql.createConnection({
 	host: 'MySQLC6.webcontrolcenter.com',
@@ -39,7 +44,7 @@ function connectToDB() {
 	});
 }
 
-function isForeignString(string) {
+function isForeignString(string, percent) {
 	var qCounter = 0;
 
 	for (var i = 0; i < string.length; i++) {
@@ -47,7 +52,7 @@ function isForeignString(string) {
 			qCounter++;
 		}
 
-		if (qCounter / string.length > 0.33) {
+		if (qCounter / string.length > percent) {
 			return true;
 		}
 	}

@@ -9,7 +9,7 @@
   "dependencies": {
     "pg": "2.x",
     "express": "~4.9.x",
-    "request": "2.47.x",
+    "request": "2.Y47.x",
     "hogan-express": "0.5.x",
     "mysql": "2.5.x",
     "sequelize": "2.0.x"

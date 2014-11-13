@@ -1,0 +1,28 @@
+
+> app-gen@0.0.1 start /home/jacob/app-gen
+> node index.js
+
+The numbers! In the, table specify the first! Browser version that fully. supports the method. This is, another sentence?
+
+the,numbers,!,in,the,,,table,specify,the,first,!,browser,version,that,fully,.,supports,the,method,.,this,is,,,another,sentence,?
+
+{ the: [ 'numbers', ',', 'first', 'method' ],
+  numbers: [ '!' ],
+  '!': [ 'in', 'browser' ],
+  in: [ 'the' ],
+  ',': [ 'table', 'another' ],
+  table: [ 'specify' ],
+  specify: [ 'the' ],
+  first: [ '!' ],
+  browser: [ 'version' ],
+  version: [ 'that' ],
+  that: [ 'fully' ],
+  fully: [ '.' ],
+  '.': [ 'supports', 'this' ],
+  supports: [ 'the' ],
+  method: [ '.' ],
+  this: [ 'is' ],
+  is: [ ',' ],
+  another: [ 'sentence' ],
+  sentence: [ '?' ] }
+Node app is running at localhost:5000

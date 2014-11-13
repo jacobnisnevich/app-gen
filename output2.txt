@@ -1,0 +1,31 @@
+
+> app-gen@0.0.1 start /home/jacob/app-gen
+> node index.js
+
+the: numbers
+numbers: !
+!: in
+in: the
+the: ,
+,: table
+table: specify
+specify: the
+the: first
+first: !
+!: browser
+browser: version
+version: that
+that: fully
+fully: .
+.: supports
+supports: the
+the: method
+method: .
+.: this
+this: is
+is: ,
+,: another
+another: sentence
+sentence: ?
+{}
+Node app is running at localhost:5000

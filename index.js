@@ -1,6 +1,7 @@
 var request = require('request');
 var express = require('express');
 var database = require('./database');
+var gram = require('./gram');
 var app = express();
 
 var constant = 1;
@@ -17,6 +18,11 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 app.use("/styles", express.static(__dirname + '/styles'));
 app.use("/js", express.static(__dirname + '/js'));
+
+desc = "The numbers! In the, table specify the first! Browser version that fully. supports the method. This is, another sentence?";
+map = {};
+console.log(desc + '\n');
+console.log(gram.twoGramMapper(desc, map));
 
 function populateWithNthPage(i, limit) {
 	var payload = {
@@ -44,8 +50,6 @@ function populateWithNthPage(i, limit) {
 		}, 1000);
 	}
 }
-
-// populateWithNthPage(0, 200);
 
 app.get('/', function(req, res) {
   res.render('index.html')

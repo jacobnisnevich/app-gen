@@ -13,18 +13,18 @@ var db = new sequelize('alex', mysql_user, mysql_pwd, {
 	}
 });
 
-var counter = 0;
+//var counter = 0;
 
-db.query("SELECT * FROM app_applist").success(function(myTableRows) {
-	myTableRows.forEach( function(row) {
-		if (isForeignString(row.description, 0.10)) {
-			// console.log(row.name);
-			counter++;
-		}
-	})
-
-	console.log(counter);
-});
+//db.query("SELECT * FROM app_applist").success(function(myTableRows) {
+//	myTableRows.forEach( function(row) {
+//		if (isForeignString(row.description, 0.10)) {
+//			console.log(row.name);
+//			db.query("DELETE FROM app_applist WHERE name='" + row.name + "'").success(function() {
+//				console.log(row.name + "was deleted successfully");
+//			});
+//		}
+//	})
+//});
 
 var connection = mysql.createConnection({
 	host: 'MySQLC6.webcontrolcenter.com',

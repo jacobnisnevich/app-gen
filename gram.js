@@ -9,23 +9,23 @@ function mapContains(map, string) {
 }
 
 function clearUnwantedChars(string) {
-	return string.replace(/[^a-z0-9.,!?]/g, "");
+	return string.replace(/[^a-z0-9\.\,\!\? ]/g, "");
 }
 
 module.exports = {
 	twoGramMapper: function (description, map) {
 		description = description.toLowerCase();
 
-		console.log(description);
-
 		description = clearUnwantedChars(description);
 
-		console.log(description);
+		console.log(description + '\n');
 
 		description = description.replace(/\./g, " .");
 		description = description.replace(/\,/g, " ,");
 		description = description.replace(/\!/g, " !");
 		description = description.replace(/\?/g, " ?");
+
+		console.log(description + '\n');
 
 		desc_words_array = description.split(" ");
 

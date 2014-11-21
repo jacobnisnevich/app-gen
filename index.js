@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/public'))
 app.use("/styles", express.static(__dirname + '/styles'));
 app.use("/js", express.static(__dirname + '/js'));
 
-desc = "The numbers! In the, table specify the first! Browser version that fully. supports the method. This is, another sentence?";
+desc = "The numbers! In$$$ the, table sp#$##ecify the first! Browser version that fully. supports the method. This is, another sentence?";
 map = {};
 console.log(desc + '\n');
 console.log(gram.twoGramMapper(desc, map));

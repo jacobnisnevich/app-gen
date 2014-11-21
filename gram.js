@@ -8,9 +8,19 @@ function mapContains(map, string) {
 	return false;
 }
 
+function clearUnwantedChars(string) {
+	return string.replace(/[^a-zA-Z0-9.,!?]/g, "");
+}
+
 module.exports = {
 	twoGramMapper: function (description, map) {
 		description = description.toLowerCase();
+
+		console.log(description);
+
+		description = clearUnwantedChars(description);
+
+		console.log(description);
 
 		description = description.replace(/\./g, " .");
 		description = description.replace(/\,/g, " ,");

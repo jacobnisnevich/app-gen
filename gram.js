@@ -9,7 +9,7 @@ function mapContains(map, string) {
 }
 
 function clearUnwantedChars(string) {
-	return string.replace(/[^a-zA-Z0-9.,!?]/g, "");
+	return string.replace(/[^a-z0-9.,!?]/g, "");
 }
 
 module.exports = {

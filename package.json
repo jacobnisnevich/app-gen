@@ -7,12 +7,12 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "pg": "2.x",
     "express": "~4.9.x",
-    "request": "2.47.x",
     "hogan-express": "0.5.x",
     "mysql": "2.5.x",
-    "weighten": "0.3.x"
+    "pg": "2.x",
+    "request": "2.47.x",
+    "weighted": "^0.3.0",
   },
   "engines": {
     "node": "0.10.x"

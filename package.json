@@ -12,7 +12,7 @@
     "request": "2.47.x",
     "hogan-express": "0.5.x",
     "mysql": "2.5.x",
-    "sequelize": "1.7.x"
+    "weighten": "0.3.x"
   },
   "engines": {
     "node": "0.10.x"

@@ -49,6 +49,12 @@ app.post("/getGeneratedAppDetails", function(req, res) {
 
 });
 
+app.post("/getStatistics", function(req, res) {
+	database.getStatistics(req.body.stat, function(result) {
+		res.send(result);
+	});
+});
+
 app.get("/updateDatabase", function(req, res) {
 	database.emptyDB(function() {
 		database.populateDB(10);

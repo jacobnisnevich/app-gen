@@ -62,7 +62,7 @@ function populateWithNthPage(i, limit) {
 
 module.exports = {
 	openConnection: function(success) {
-		connection.connect(function(err, result) {
+		connection.connect(function(err) {
 			if (err) {
 				console.error("Error connecting to MYSQL Server: " + err.stack);
 				return;
@@ -129,7 +129,7 @@ module.exports = {
 				result.forEach( function(row) {
 					if (isForeignString(row.description, 0.10) && success) {
 						console.log(row.name);
-						connection.query("DELETE FROM app_applist WHERE name='" + row.name + "'", function(err, result) {
+						connection.query("DELETE FROM app_applist WHERE name='" + row.name + "'", function(err) {
 							if (err) {
 								success = false;
 								return;
@@ -156,6 +156,28 @@ module.exports = {
 	},
 	getCategoryCounts: function(callback) {
 		connection.query("SELECT category, COUNT(NAME) AS `count` FROM app_applist GROUP BY category", function(err, result) {
+			callback(result);
+		});
+	},
+	getStatistics: function(type, callback) {
+		var query = "";
+
+		switch (type) {
+			case "appCount":
+				query = "SELECT category, COUNT(category) AS 'appCount' FROM app_applist GROUP BY category";
+				break;
+			case "averageRating":
+				query = "SELECT category, AVG(rating) AS 'averageRating' FROM app_applist GROUP BY category";
+				break;
+			case "averageReviewsCount":
+				query = "SELECT category, ROUND(AVG(reviews), 0) AS 'averageReviewsCount' FROM app_applist GROUP BY category";
+				break;
+			case "averagePrice":
+				query = "SELECT category, ROUND(AVG(REPLACE(price, '$', '')), 2) AS 'averagePrice' FROM app_applist WHERE price <> '' GROUP BY category";
+				break;
+		}
+
+		connection.query(query, function(err, result) {
 			callback(result);
 		});
 	}

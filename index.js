@@ -47,23 +47,6 @@ app.post("/getGeneratedAppDetails", function(req, res) {
 		});
 	});
 
-	//	database.getCategoryCounts(function(result) {
-	//		generator.getAppCategory(result, function(category) {
-	//			appDetails.category = category;		
-	//			database.getNames(category, 20, function(result) {
-	//				generator.getAppName(result, appNameLength, function(name) {
-	//					appDetails.name = name;
-	//					database.getDescriptions(category, 20, function(result) {
-	//						generator.getAppDescription(result, appDescriptionLength, function(description) {
-	//							appDetails.description = description;
-	//							res.send(appDetails);
-	//						});
-	//					});
-	//				});
-	//			});
-	//		});
-	//	});
-
 });
 
 app.get("/updateDatabase", function(req, res) {

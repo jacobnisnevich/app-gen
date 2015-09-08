@@ -7,14 +7,12 @@ var mysql_user = process.env.MYSQL_USERNAME.toString();
 var mysql_pwd = process.env.MYSQL_PASSWORD.toString();
 
 var connectionObject = {
-	host: "us-cdbr-iron-east-02.cleardb.net",
+	host: "jacob-aws.cksaafhhhze5.us-west-1.rds.amazonaws.com",
 	user: mysql_user,
 	password: mysql_pwd,
-	database: "heroku_5aa1d303ce2b7ce",
+	database: "jacob",
 	insecureAuth: true
 };
-
-console.log(connectionObject);
 
 var connection = mysql.createConnection(connectionObject);
 

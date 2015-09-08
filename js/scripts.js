@@ -1,3 +1,5 @@
+"use strict";
+
 $(document).ready(function() {
 	$("#generate-app").click(function() {
 		var postParams = {
@@ -17,4 +19,4 @@ $(document).ready(function() {
 
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
-}
+};

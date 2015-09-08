@@ -1,14 +1,18 @@
 "use strict";
 
-var weighted = require("weighted")
+var weighted = require("weighted");
 var gram = require("./gram");
 
 function isAlpha(string) {
 	return /^[a-zA-Z]+$/.test(string);
 }
 
+function hasPunctuation(string) {
+	return /^[\.\,\!\?]+$/.test(string);
+}
+
 module.exports = {
-	getAppName: function(names, length) {
+	getAppName: function(names, length, callback) {
 		var gramHash = {};
 
 		names.forEach(function(name) {
@@ -28,17 +32,21 @@ module.exports = {
 		var lastLetter = firstLetter;
 
 		while (true) {
-			lastLetter = gramHash[lastLetter][Math.floor(Math.random() * gramHash[lastLetter].length)];
-			generatedDescription = generatedDescription.concat(lastLetter);
-			letterCount++;
-			if (letterCount > length) {
+			if (gramHash[lastLetter]) {
+				lastLetter = gramHash[lastLetter][Math.floor(Math.random() * gramHash[lastLetter].length)];
+				generatedDescription = generatedDescription.concat(lastLetter);
+				letterCount++;
+				if (letterCount > length) {
+					break;
+				}
+			} else {
 				break;
 			}
 		}
 
-		return generatedDescription; 
+		callback(generatedDescription); 
 	},
-	getAppDescription: function(descriptions, length) {
+	getAppDescription: function(descriptions, length, callback) {
 		var gramHash = {};
 
 		descriptions.forEach(function(description) {
@@ -58,25 +66,33 @@ module.exports = {
 		var lastWord = firstWord;
 
 		while (true) {
-			lastWord = gramHash[lastWord][Math.floor(Math.random() * gramHash[lastWord].length)];
-			generatedDescription = generatedDescription.concat(" " + lastWord);
-			wordCount++;
-			if (lastWord == "." && wordCount > length) {
+			if (gramHash[lastWord]) {			
+				lastWord = gramHash[lastWord][Math.floor(Math.random() * gramHash[lastWord].length)];
+				if (hasPunctuation(lastWord)) {
+					generatedDescription = generatedDescription.concat(lastWord);
+				} else {
+					generatedDescription = generatedDescription.concat(" " + lastWord);
+				}
+				wordCount++;
+				if (lastWord == "." && wordCount > length) {
+					break;
+				}
+			} else {
 				break;
 			}
 		}
 
-		return generatedDescription;
+		callback(generatedDescription);
 	},
-	getAppCategory: function(categoryCounts) {
+	getAppCategory: function(categoryCounts, callback) {
 		var categories = [];
 		var counts = [];
 
 		categoryCounts.forEach(function(category) {
 			categories.push(category.category);
-			counts.push(category.count)
+			counts.push(category.count);
 		});
 
-		return weighted.select(categories, counts);
+		callback(weighted.select(categories, counts));
 	}
-}
+};

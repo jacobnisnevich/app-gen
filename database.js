@@ -48,7 +48,7 @@ function populateWithNthPage(i, limit) {
 		}
 	};	
 
-	database.appendPageToDB(payload);
+	module.exports.appendPageToDB(payload);
 
 	if (i < limit) {
 		setTimeout(function() {
@@ -142,19 +142,19 @@ module.exports = {
 			callback(success);
 		});
 	},
-	getNames: function(limit, callback) {
-		connection.query("SELECT name FROM app_applist LIMIT 0, " + limit.toString(), function(err, result) {
+	getNames: function(category, limit, callback) {
+		connection.query("SELECT name FROM app_applist WHERE category='" + category.toString() + "' LIMIT 0, " + limit.toString(), function(err, result) {
 			callback(result);
 		});
 	},
-	getDescriptions: function(limit, callback) {
-		connection.query("SELECT description FROM app_applist LIMIT 0, " + limit.toString(), function(err, result) {
+	getDescriptions: function(category, limit, callback) {
+		connection.query("SELECT description FROM app_applist WHERE category='" + category.toString() + "' LIMIT 0, " + limit.toString(), function(err, result) {
 			callback(result);
 		});
 	},
 	getCategoryCounts: function(callback) {
 		connection.query("SELECT category, COUNT(NAME) AS `count` FROM app_applist GROUP BY category", function(err, result) {
 			callback(result);
-		})
+		});
 	}
 };

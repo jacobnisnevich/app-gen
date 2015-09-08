@@ -34,19 +34,14 @@ section{
 	color: #333;
 }
 
-#data {
+#statistics {
 	background-color: rgb(51, 51, 51);
 	color: #EEE;
-}
-
-#statistics {
-	background-color: #F6F6F6;
-	color: #333;
 }
 
 #about {
-	background-color: rgb(51, 51, 51);
-	color: #EEE;
+	background-color: #F6F6F6;
+	color: #333;
 }
 
 #about ul {

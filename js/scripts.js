@@ -1,15 +1,18 @@
 $(document).ready(function() {
-	$.get("/getAppName", function(result) {
-		$("#app-name").text(result);
+	$("#generate-app").click(function() {
+		var postParams = {
+			"appNameLength": $("#app-name-length").val(),
+			"appDescriptionLength": $("#app-description-length").val(),
+			"appCategory": $("#app-category-select").val()
+		};
+
+		$.post("/getGeneratedAppDetails", postParams, function(result) {
+			$("#app-name").text(result.name);
+			$("#app-category").text(result.category);
+			$("#app-description").text(result.description.capitalize());
+		});
 	});
 
-	$.get("/getAppCategory", function(result) {
-		$("#app-category").text(result);
-	});
-
-	$.get("/getAppDescription", function(result) {
-		$("#app-description").text(result.capitalize());
-	});
 });
 
 String.prototype.capitalize = function() {

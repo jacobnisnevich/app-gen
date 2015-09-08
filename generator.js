@@ -14,7 +14,7 @@ function hasPunctuation(string) {
 module.exports = {
 	getAppName: function(names, length, callback) {
 		var gramHash = {};
-
+		
 		names.forEach(function(name) {
 			gram.twoGramMapperNames(name.name, gramHash);
 		});

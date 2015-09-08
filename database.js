@@ -144,6 +144,7 @@ module.exports = {
 	},
 	getNames: function(category, limit, callback) {
 		connection.query("SELECT name FROM app_applist WHERE category='" + category.toString() + "' LIMIT 0, " + limit.toString(), function(err, result) {
+			console.log(result);
 			callback(result);
 		});
 	},

@@ -1,40 +1,3 @@
-2015-09-08T03:59:06.782942+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=app-gen.herokuapp.com request_id=88957537-f3ea-4363-8005-9b9942d99f98 fwd="108.185.188.248" dyno=web.1 connect=15ms service=4ms status=404 bytes=222
-2015-09-08T03:59:10.698431+00:00 heroku[router]: at=info method=GET path="/js/bootstrap.min.js" host=app-gen.herokuapp.com request_id=963ef812-7b49-4fea-8560-a81575e91202 fwd="108.185.188.248" dyno=web.1 connect=1ms service=17ms status=304 bytes=237
-2015-09-08T03:59:10.697010+00:00 heroku[router]: at=info method=GET path="/js/jquery.js" host=app-gen.herokuapp.com request_id=227159dd-68c6-4219-8c47-c08272f1fad6 fwd="108.185.188.248" dyno=web.1 connect=0ms service=17ms status=304 bytes=238
-2015-09-08T03:59:10.549437+00:00 heroku[router]: at=info method=GET path="/" host=app-gen.herokuapp.com request_id=3de22538-6c4a-4403-8e6e-d05b3030835f fwd="108.185.188.248" dyno=web.1 connect=6ms service=29ms status=200 bytes=6524
-2015-09-08T03:59:10.704180+00:00 heroku[router]: at=info method=GET path="/js/jquery.easing.min.js" host=app-gen.herokuapp.com request_id=1ca7eeed-fa8a-469e-ab24-df022314770d fwd="108.185.188.248" dyno=web.1 connect=0ms service=23ms status=304 bytes=237
-2015-09-08T03:59:10.721401+00:00 heroku[router]: at=info method=GET path="/styles/scrolling-nav.css" host=app-gen.herokuapp.com request_id=412128bc-2fd0-454d-8b9e-e36b3ac6f666 fwd="108.185.188.248" dyno=web.1 connect=28ms service=14ms status=304 bytes=236
-2015-09-08T03:59:10.695958+00:00 heroku[router]: at=info method=GET path="/styles/styles.css" host=app-gen.herokuapp.com request_id=a6fc5be4-2eb3-4ef4-9f00-fa71e730af7f fwd="108.185.188.248" dyno=web.1 connect=0ms service=17ms status=304 bytes=236
-2015-09-08T03:59:10.788100+00:00 heroku[router]: at=info method=GET path="/js/scrolling-nav.js" host=app-gen.herokuapp.com request_id=bfcd17cd-6423-44a0-9f42-c0e899b5868e fwd="108.185.188.248" dyno=web.1 connect=0ms service=8ms status=304 bytes=236
-2015-09-08T03:59:10.805143+00:00 heroku[router]: at=info method=GET path="/js/scripts.js" host=app-gen.herokuapp.com request_id=19ae185b-731b-4a00-b40c-b964d5346667 fwd="108.185.188.248" dyno=web.1 connect=2ms service=5ms status=304 bytes=236
-2015-09-08T03:59:20.562179+00:00 app[web.1]: 
-2015-09-08T03:59:20.562252+00:00 app[web.1]: /app/generator.js:18
-2015-09-08T03:59:20.562503+00:00 app[web.1]: 		names.forEach(function(name) {
-2015-09-08T03:59:20.562642+00:00 app[web.1]: 		      ^
-2015-09-08T03:59:20.564045+00:00 app[web.1]: TypeError: Cannot call method 'forEach' of undefined
-2015-09-08T03:59:20.564048+00:00 app[web.1]:     at Object.module.exports.getAppName (/app/generator.js:18:9)
-2015-09-08T03:59:20.564049+00:00 app[web.1]:     at /app/index.js:39:13
-2015-09-08T03:59:20.564051+00:00 app[web.1]:     at Query._callback (/app/database.js:147:4)
-2015-09-08T03:59:20.564052+00:00 app[web.1]:     at Query.Sequence.end (/app/node_modules/mysql/lib/protocol/sequences/Sequence.js:96:24)
-2015-09-08T03:59:20.564054+00:00 app[web.1]:     at /app/node_modules/mysql/lib/protocol/Protocol.js:390:18
-2015-09-08T03:59:20.564055+00:00 app[web.1]:     at Array.forEach (native)
-2015-09-08T03:59:20.564057+00:00 app[web.1]:     at /app/node_modules/mysql/lib/protocol/Protocol.js:389:13
-2015-09-08T03:59:20.564058+00:00 app[web.1]:     at process._tickCallback (node.js:448:13)
-2015-09-08T03:59:20.576316+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=POST path="/getGeneratedAppDetails" host=app-gen.herokuapp.com request_id=c4f376f1-496f-4a3c-b2f6-9ce8a4efe62f fwd="108.185.188.248" dyno=web.1 connect=0ms service=10073ms status=503 bytes=0
-2015-09-08T03:59:21.339298+00:00 heroku[web.1]: State changed from up to crashed
-2015-09-08T03:59:21.320402+00:00 heroku[web.1]: Process exited with status 8
-2015-09-08T03:59:47.995788+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=POST path="/getGeneratedAppDetails" host=app-gen.herokuapp.com request_id=ea7eff77-84f3-42a4-bb82-c51bff701011 fwd="108.185.188.248" dyno= connect= service= status=503 bytes=
-2015-09-08T03:59:49.312410+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/styles/scrolling-nav.css" host=app-gen.herokuapp.com request_id=7622967e-03e3-418c-9269-8207279348c9 fwd="108.185.188.248" dyno= connect= service= status=503 bytes=
-2015-09-08T03:59:49.314419+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/styles/styles.css" host=app-gen.herokuapp.com request_id=913098c3-b865-46e0-929e-826b356c47d3 fwd="108.185.188.248" dyno= connect= service= status=503 bytes=
-2015-09-08T04:07:16.814368+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=app-gen.herokuapp.com request_id=46134156-e166-4ccb-a776-74627fc26a75 fwd="108.185.188.248" dyno= connect= service= status=503 bytes=
-2015-09-08T04:08:45.054916+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=app-gen.herokuapp.com request_id=765a00a4-bd9f-4587-96aa-ff9404412453 fwd="108.185.188.248" dyno= connect= service= status=503 bytes=
-2015-09-08T04:09:03.900969+00:00 heroku[slug-compiler]: Slug compilation started
-2015-09-08T04:09:03.900987+00:00 heroku[slug-compiler]: Slug compilation finished
-2015-09-08T04:09:03.842548+00:00 heroku[api]: Deploy 774996e by jacob.nisnevich@gmail.com
-2015-09-08T04:09:03.842665+00:00 heroku[api]: Release v50 created by jacob.nisnevich@gmail.com
-2015-09-08T04:09:04.053393+00:00 heroku[web.1]: State changed from crashed to starting
-2015-09-08T04:09:05.653730+00:00 heroku[web.1]: Starting process with command `node index.js`
-2015-09-08T04:09:07.507833+00:00 app[web.1]: Node app is running at localhost:59575
 2015-09-08T04:09:07.913687+00:00 heroku[web.1]: State changed from starting to up
 2015-09-08T04:09:14.359325+00:00 heroku[router]: at=info method=GET path="/" host=app-gen.herokuapp.com request_id=ce7403bd-67b2-49be-a765-b65fca21782e fwd="108.185.188.248" dyno=web.1 connect=0ms service=26ms status=200 bytes=6526
 2015-09-08T04:09:14.601806+00:00 heroku[router]: at=info method=GET path="/styles/styles.css" host=app-gen.herokuapp.com request_id=b1b0f643-34ca-43e2-b6b1-bd4d7ca508e6 fwd="108.185.188.248" dyno=web.1 connect=1ms service=3ms status=200 bytes=970
@@ -99,3 +62,42 @@
 2015-09-08T04:14:23.232838+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=POST path="/getGeneratedAppDetails" host=app-gen.herokuapp.com request_id=5c621a9b-63f2-4cbd-83e7-b070a97b1e41 fwd="108.185.188.248" dyno=web.1 connect=2ms service=10064ms status=503 bytes=0
 2015-09-08T04:14:24.068661+00:00 heroku[web.1]: State changed from up to crashed
 2015-09-08T04:14:24.053346+00:00 heroku[web.1]: Process exited with status 8
+2015-09-08T04:19:25.943571+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=app-gen.herokuapp.com request_id=a9a28f8b-00ce-4eed-9384-a09dba87ae94 fwd="108.185.188.248" dyno= connect= service= status=503 bytes=
+2015-09-08T04:19:39.103427+00:00 heroku[slug-compiler]: Slug compilation started
+2015-09-08T04:19:39.103448+00:00 heroku[slug-compiler]: Slug compilation finished
+2015-09-08T04:19:38.921495+00:00 heroku[api]: Deploy 0489525 by jacob.nisnevich@gmail.com
+2015-09-08T04:19:38.921673+00:00 heroku[api]: Release v52 created by jacob.nisnevich@gmail.com
+2015-09-08T04:19:39.151575+00:00 heroku[web.1]: State changed from crashed to starting
+2015-09-08T04:19:41.477381+00:00 heroku[web.1]: Starting process with command `node index.js`
+2015-09-08T04:19:43.445671+00:00 app[web.1]: Node app is running at localhost:14676
+2015-09-08T04:19:43.918518+00:00 heroku[web.1]: State changed from starting to up
+2015-09-08T04:19:45.018915+00:00 heroku[router]: at=info method=GET path="/" host=app-gen.herokuapp.com request_id=ef94f6fb-f4e5-491b-9f7a-cece269aaf80 fwd="108.185.188.248" dyno=web.1 connect=2ms service=30ms status=200 bytes=6526
+2015-09-08T04:19:45.329624+00:00 heroku[router]: at=info method=GET path="/styles/scrolling-nav.css" host=app-gen.herokuapp.com request_id=de02543a-5161-4eb3-8178-185cdffb391b fwd="108.185.188.248" dyno=web.1 connect=1ms service=10ms status=200 bytes=1733
+2015-09-08T04:19:45.433992+00:00 heroku[router]: at=info method=GET path="/styles/styles.css" host=app-gen.herokuapp.com request_id=43e8210d-30f4-4a25-aa84-eba77d82a673 fwd="108.185.188.248" dyno=web.1 connect=1ms service=7ms status=200 bytes=970
+2015-09-08T04:19:45.481815+00:00 heroku[router]: at=info method=GET path="/js/scrolling-nav.js" host=app-gen.herokuapp.com request_id=b172ee22-d781-4df4-9275-993ffff50ba5 fwd="108.185.188.248" dyno=web.1 connect=1ms service=5ms status=200 bytes=897
+2015-09-08T04:19:45.485535+00:00 heroku[router]: at=info method=GET path="/js/bootstrap.min.js" host=app-gen.herokuapp.com request_id=3229b4e7-9923-4228-b0f9-93ddc88d5682 fwd="108.185.188.248" dyno=web.1 connect=1ms service=4ms status=200 bytes=34941
+2015-09-08T04:19:45.498056+00:00 heroku[router]: at=info method=GET path="/js/jquery.js" host=app-gen.herokuapp.com request_id=3f545a7f-e721-4684-afd3-417964f736ef fwd="108.185.188.248" dyno=web.1 connect=10ms service=7ms status=200 bytes=96074
+2015-09-08T04:19:45.499588+00:00 heroku[router]: at=info method=GET path="/js/scripts.js" host=app-gen.herokuapp.com request_id=a1fcc251-b699-4217-bd08-ec0b0f9c30b9 fwd="108.185.188.248" dyno=web.1 connect=1ms service=16ms status=200 bytes=891
+2015-09-08T04:19:45.506781+00:00 heroku[router]: at=info method=GET path="/js/jquery.easing.min.js" host=app-gen.herokuapp.com request_id=675a6c9d-d157-4d4a-a3eb-d49be2bc2157 fwd="108.185.188.248" dyno=web.1 connect=1ms service=21ms status=200 bytes=5851
+2015-09-08T04:19:48.433130+00:00 app[web.1]: SELECT name FROM app_applist WHERE category='Action' LIMIT 0, 20
+2015-09-08T04:19:58.447621+00:00 app[web.1]: 
+2015-09-08T04:19:58.447721+00:00 app[web.1]: /app/generator.js:18
+2015-09-08T04:19:58.447971+00:00 app[web.1]: 		names.forEach(function(name) {
+2015-09-08T04:19:58.447981+00:00 app[web.1]: 		      ^
+2015-09-08T04:19:58.449378+00:00 app[web.1]: TypeError: Cannot call method 'forEach' of undefined
+2015-09-08T04:19:58.449380+00:00 app[web.1]:     at Object.module.exports.getAppName (/app/generator.js:18:9)
+2015-09-08T04:19:58.449382+00:00 app[web.1]:     at /app/index.js:39:13
+2015-09-08T04:19:58.449384+00:00 app[web.1]:     at Query._callback (/app/database.js:149:4)
+2015-09-08T04:19:58.449385+00:00 app[web.1]:     at Query.Sequence.end (/app/node_modules/mysql/lib/protocol/sequences/Sequence.js:96:24)
+2015-09-08T04:19:58.449387+00:00 app[web.1]:     at /app/node_modules/mysql/lib/protocol/Protocol.js:390:18
+2015-09-08T04:19:58.449388+00:00 app[web.1]:     at Array.forEach (native)
+2015-09-08T04:19:58.449389+00:00 app[web.1]:     at /app/node_modules/mysql/lib/protocol/Protocol.js:389:13
+2015-09-08T04:19:58.449391+00:00 app[web.1]:     at process._tickCallback (node.js:448:13)
+2015-09-08T04:19:58.447166+00:00 app[web.1]: undefined
+2015-09-08T04:19:58.472522+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=POST path="/getGeneratedAppDetails" host=app-gen.herokuapp.com request_id=9bdf113f-4090-4b9b-87ae-6acd024bdc1c fwd="108.185.188.248" dyno=web.1 connect=1ms service=10063ms status=503 bytes=0
+2015-09-08T04:19:59.272826+00:00 heroku[web.1]: Process exited with status 8
+2015-09-08T04:19:59.286489+00:00 heroku[web.1]: State changed from up to crashed
+2015-09-08T04:19:59.287417+00:00 heroku[web.1]: State changed from crashed to starting
+2015-09-08T04:20:00.566074+00:00 heroku[web.1]: Starting process with command `node index.js`
+2015-09-08T04:20:02.864150+00:00 app[web.1]: Node app is running at localhost:33519
+2015-09-08T04:20:04.211016+00:00 heroku[web.1]: State changed from starting to up

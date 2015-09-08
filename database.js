@@ -6,13 +6,17 @@ var request = require("request");
 var mysql_user = process.env.MYSQL_USERNAME.toString();
 var mysql_pwd = process.env.MYSQL_PASSWORD.toString();
 
-var connection = mysql.createConnection({
+var connectionObject = {
 	host: "ec2-52-8-176-145.us-west-1.compute.amazonaws.com",
 	user: mysql_user,
 	password: mysql_pwd,
 	database: "alex",
 	insecureAuth: true
-});
+};
+
+console.log(connectionObject);
+
+var connection = mysql.createConnection(connectionObject);
 
 function isForeignString(string, percent) {
 	var qCounter = 0;

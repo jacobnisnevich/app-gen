@@ -7,10 +7,10 @@ var mysql_user = process.env.MYSQL_USERNAME.toString();
 var mysql_pwd = process.env.MYSQL_PASSWORD.toString();
 
 var connectionObject = {
-	host: "ec2-52-8-176-145.us-west-1.compute.amazonaws.com",
+	host: "us-cdbr-iron-east-02.cleardb.net",
 	user: mysql_user,
 	password: mysql_pwd,
-	database: "alex",
+	database: "heroku_5aa1d303ce2b7ce",
 	insecureAuth: true
 };
 
@@ -147,9 +147,7 @@ module.exports = {
 		});
 	},
 	getNames: function(category, limit, callback) {
-		console.log("SELECT name FROM app_applist WHERE category='" + category.toString() + "' LIMIT 0, " + limit.toString());
 		connection.query("SELECT name FROM app_applist WHERE category='" + category.toString() + "' LIMIT 0, " + limit.toString(), function(err, result) {
-			console.log(result);
 			callback(result);
 		});
 	},
